@@ -28,8 +28,20 @@
   padding: 0;
 }
 
+img, video, svg {
+  max-width: 100%;
+  height: auto;
+}
+
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  scroll-padding-top: 80px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Skip to main content - accessibility & SEO */
@@ -61,6 +73,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 #root {
@@ -68,10 +82,11 @@ body {
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  max-width: 100%;
+  max-width: 100vw;
   margin: 0;
   border: none;
   text-align: left;
+  overflow-x: hidden;
 }
 
 /* Header & Nav */
@@ -195,15 +210,18 @@ body {
   border-radius: 4px;
 }
 
-/* Main content - full width; use .container for centered content */
+/* Main content - contained, no stretch; use .container for centered content */
 main {
   flex: 1;
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  width: 100%;
 }
 
 /* Hero */
@@ -386,9 +404,10 @@ main {
 /* Cards grid */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
+  max-width: 100%;
 }
 
 .card {
@@ -546,10 +565,11 @@ main {
 /* Contact */
 .contact-wrap {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 3rem;
   align-items: start;
   padding: 2.5rem 0;
+  max-width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -716,12 +736,15 @@ main {
 /* ========== JK Paper-style home page ========== */
 .section--full {
   width: 100%;
+  max-width: 100%;
   padding: 4rem 0;
+  overflow-x: hidden;
 }
 .section--full .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  width: 100%;
 }
 
 /* Sustainability stats (home) */
@@ -749,10 +772,11 @@ main {
 /* Regenerative cycle - 7 steps */
 .cycle-steps {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0.5rem;
   margin: 2.5rem 0;
   text-align: center;
+  max-width: 100%;
 }
 .cycle-step {
   padding: 1.25rem 0.75rem;
@@ -797,9 +821,10 @@ main {
 /* Home products strip - horizontal cards */
 .home-products {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 1.25rem;
   margin: 2.5rem 0;
+  max-width: 100%;
 }
 .home-product-item {
   background: #fff;
