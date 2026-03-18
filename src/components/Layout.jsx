@@ -9,7 +9,8 @@ const navItems = [
 
 const EMAIL = 'karunaworldwidellp@gmail.com';
 const ADDRESS = 'A/321, Sun Trade Center, Near Gujarat Gas, Char Rasta, Vapi - 396195';
-const PHONE = '9978895557';
+const PHONE_1 = '9023260875';
+const PHONE_2 = '9537116011';
 
 export default function Layout() {
   return (
@@ -63,7 +64,8 @@ export default function Layout() {
             <div>
               <h4>Contact</h4>
               <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-              <a href={`tel:+91${PHONE}`}>+91 {PHONE}</a>
+              <a href={`tel:+91${PHONE_1}`}>+91 {PHONE_1}</a>
+              <a href={`tel:+91${PHONE_2}`}>+91 {PHONE_2}</a>
               <p style={{ marginTop: '0.5rem', marginBottom: 0 }}>{ADDRESS}</p>
             </div>
           </div>
