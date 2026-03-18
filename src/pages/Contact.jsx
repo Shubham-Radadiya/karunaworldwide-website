@@ -3,8 +3,7 @@ import Seo from '../components/Seo';
 
 const EMAIL = 'karunaworldwidellp@gmail.com';
 const ADDRESS = 'A/321, Sun Trade Center, Near Gujarat Gas, Char Rasta, Vapi - 396195';
-const PHONE_1 = '9023260875';
-const PHONE_2 = '9978895557';
+const PHONE = '9978895557';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -36,8 +35,7 @@ export default function Contact() {
             <p>Karuna Worldwide LLP</p>
             <p style={{ whiteSpace: 'pre-line' }}>{ADDRESS}</p>
             <h3 style={{ marginTop: '1rem' }}>Phone</h3>
-            <a href={`tel:+91${PHONE_1}`}>+91 {PHONE_1}</a>
-            <a href={`tel:+91${PHONE_2}`}>+91 {PHONE_2}</a>
+            <a href={`tel:+91${PHONE}`}>+91 {PHONE}</a>
           </div>
 
           <div className="contact-form">
